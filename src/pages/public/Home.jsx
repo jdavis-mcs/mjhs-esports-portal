@@ -31,15 +31,22 @@ const Home = () => {
           </p>
           
           <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <button onClick={scrollToStream} className="bg-brand-red text-white px-8 py-4 rounded font-titles text-xl hover:bg-brand-darkRed transition shadow-[0_0_20px_rgba(176,12,26,0.4)] hover:shadow-[0_0_30px_rgba(176,12,26,0.6)]">
-              WATCH LIVE
-            </button>
+            {/* WATCH LIVE -> Matches/Schedule */}
+			<Link to="/matches" className="bg-brand-red text-white px-8 py-4 rounded font-titles text-xl hover:bg-brand-darkRed transition shadow-[0_0_20px_rgba(176,12,26,0.4)] hover:shadow-[0_0_30px_rgba(176,12,26,0.6)]">
+			  MATCHES
+		    </Link>
             
-            {/* Redirects to Login since Roster is private for now */}
-            <Link to="/login" className="border border-brand-grey text-white px-8 py-4 rounded font-titles text-xl hover:bg-brand-white hover:text-brand-black transition">
-              TEAM LOGIN
-            </Link>
+            {/* MEET THE TEAM -> Public Roster */}
+			  <Link to="/public-roster" className="border border-brand-grey text-white px-8 py-4 rounded font-titles text-xl hover:bg-brand-white hover:text-brand-black transition">
+				MEET THE TEAM
+			  </Link>
             
+			{/* MERCH STORE Button (Added) */}
+			  <Link to="/shop" className="bg-brand-yellow text-brand-black font-titles text-xl px-8 py-4 skew-x-[-10deg] hover:scale-105 transition-all duration-300 border-2 border-brand-yellow shadow-[0_0_20px_rgba(255,245,0,0.3)]">
+				<span className="skew-x-[10deg] block">MERCH STORE</span>
+			  </Link>
+			
+			
             <Link to="/login">
               <button className="bg-brand-white text-brand-black font-titles text-xl px-8 py-4 skew-x-[-10deg] hover:scale-105 transition-all duration-300 border-2 border-white shadow-[0_0_20px_rgba(255,255,255,0.2)]">
                 <span className="skew-x-[10deg] block">JOIN THE TEAM</span>

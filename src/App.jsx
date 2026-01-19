@@ -16,6 +16,9 @@ import Financials from './pages/dashboard/Financials';
 import Store from './pages/dashboard/Store';
 import StreamOverlay from './pages/public/StreamOverlay';
 import POS from './pages/dashboard/POS';
+import PublicRoster from './pages/public/PublicRoster';
+import PublicMatches from './pages/public/PublicMatches';
+import Store from './pages/dashboard/Store';
 
 // --- INLINE COMPONENTS ---
 
@@ -75,7 +78,16 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<LoginPage />} />
 		  <Route path="/overlay" element={<StreamOverlay />} />
+		  <Route path="/public-roster" element={<PublicRoster />} />
+          <Route path="/matches" element={<PublicMatches />} />
           
+		  <Route path="/shop" element={
+              <div className="min-h-screen bg-brand-black text-white">
+                <Navbar /> 
+                <div className="max-w-7xl mx-auto p-6"><Store /></div>
+              </div>
+           } />
+		  
           {/* Protected Dashboard Routes */}
           <Route path="/dashboard" element={
             <ProtectedRoute>
