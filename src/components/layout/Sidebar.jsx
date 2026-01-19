@@ -9,8 +9,9 @@ import {
   LogOut, 
   X,
   FileText, // Import Icon for Application
-  Inbox     // Import Icon for Manager
-  Banknote
+  Inbox,     // Import Icon for Manager
+  Banknote,
+  ShoppingBag
 } from 'lucide-react';
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
@@ -32,6 +33,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     { label: 'Comms', path: '/dashboard/comms', icon: <MessageSquare size={20} />, roles: ['all'] },
     { label: 'Calendar', path: '/dashboard/calendar', icon: <Calendar size={20} />, roles: ['all'] },
     { label: 'My Stats', path: '/dashboard/stats', icon: <Trophy size={20} />, roles: ['all'] },
+	{ label: 'Store', path: '/dashboard/store', icon: <ShoppingBag size={20} />, roles: ['all'] }, // Visible to everyone
   ];
 
   // Filter items based on role
