@@ -14,6 +14,7 @@ import PlayerApplication from './pages/dashboard/PlayerApplication';
 import ApplicationManager from './pages/dashboard/ApplicationManager';
 import Financials from './pages/dashboard/Financials';
 import Store from './pages/dashboard/Store';
+import StreamOverlay from './pages/public/StreamOverlay';
 
 // --- INLINE COMPONENTS ---
 
@@ -72,6 +73,7 @@ function App() {
           {/* Public Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<LoginPage />} />
+		  <Route path="/overlay" element={<StreamOverlay />} />
           
           {/* Protected Dashboard Routes */}
           <Route path="/dashboard" element={

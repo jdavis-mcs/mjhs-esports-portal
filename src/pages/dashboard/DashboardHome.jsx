@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { collection, query, where, orderBy, limit, getDocs } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
 import { Calendar, Clock, MapPin, ArrowRight, Trophy } from 'lucide-react';
+import StreamControl from '../../components/dashboard/StreamControl'; // Import it
 
 const DashboardHome = () => {
   const { currentUser, userRole } = useAuth();
@@ -60,6 +61,11 @@ const DashboardHome = () => {
           System Status: <span className="text-brand-green font-bold">ONLINE</span>
         </p>
       </div>
+	  
+	  {/* STREAM CONTROL WIDGET (Only for Admin/Coach) */}
+	  {(userRole === 'admin' || userRole === 'coach') && (
+		<StreamControl />
+	  )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         
