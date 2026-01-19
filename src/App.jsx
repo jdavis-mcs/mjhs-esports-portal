@@ -15,6 +15,7 @@ import ApplicationManager from './pages/dashboard/ApplicationManager';
 import Financials from './pages/dashboard/Financials';
 import Store from './pages/dashboard/Store';
 import StreamOverlay from './pages/public/StreamOverlay';
+import POS from './pages/dashboard/POS';
 
 // --- INLINE COMPONENTS ---
 
@@ -91,6 +92,7 @@ function App() {
             <Route path="application" element={<PlayerApplication />} />
             <Route path="inbox" element={<ApplicationManager />} />
 			<Route path="store" element={<Store />} />
+			<Route path="pos" element={<POS />} />
           </Route>
 
         </Routes>
