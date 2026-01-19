@@ -12,6 +12,7 @@ import Comms from './pages/dashboard/Comms';
 import Calendar from './pages/dashboard/Calendar';
 import PlayerApplication from './pages/dashboard/PlayerApplication';
 import ApplicationManager from './pages/dashboard/ApplicationManager';
+import Financials from './pages/dashboard/Financials';
 
 // --- INLINE COMPONENTS ---
 
@@ -83,6 +84,7 @@ function App() {
 			<Route path="roster" element={<Roster />} />
 			<Route path="comms" element={<Comms />} />
 			<Route path="calendar" element={<Calendar />} />
+			<Route path="financials" element={<Financials />} />
             <Route path="application" element={<PlayerApplication />} />
             <Route path="inbox" element={<ApplicationManager />} />
           </Route>

@@ -10,6 +10,7 @@ import {
   X,
   FileText, // Import Icon for Application
   Inbox     // Import Icon for Manager
+  Banknote
 } from 'lucide-react';
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
@@ -22,6 +23,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     // COACH / ADMIN ONLY
     { label: 'Inbox', path: '/dashboard/inbox', icon: <Inbox size={20} />, roles: ['admin', 'coach'] },
     { label: 'Roster & Teams', path: '/dashboard/roster', icon: <Users size={20} />, roles: ['admin', 'coach'] },
+	{ label: 'Financials', path: '/dashboard/financials', icon: <Banknote size={20} />, roles: ['admin', 'coach', 'staff'] },
     
     // STUDENTS / GUESTS ONLY
     { label: 'Join Team', path: '/dashboard/application', icon: <FileText size={20} />, roles: ['student', 'guest'] },
