@@ -90,7 +90,7 @@ const Home = () => {
               {/* REPLACE 'YOUR_CHANNEL_ID' with your real Channel ID or Video ID */}
               <iframe 
                 className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID" 
+                src="https://www.youtube.com/embed/live_stream?channel=UC_GqbAvw-u2bRP9l-VT-fhw" 
                 title="MJHS Esports Live"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowFullScreen>
