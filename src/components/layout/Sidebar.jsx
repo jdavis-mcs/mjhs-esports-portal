@@ -7,7 +7,9 @@ import {
   MessageSquare, 
   Users, 
   LogOut, 
-  X 
+  X,
+  FileText, // Import Icon for Application
+  Inbox     // Import Icon for Manager
 } from 'lucide-react';
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
@@ -16,10 +18,18 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
   const navItems = [
     { label: 'Dashboard', path: '/dashboard', icon: <LayoutDashboard size={20} />, roles: ['all'] },
+    
+    // COACH / ADMIN ONLY
+    { label: 'Inbox', path: '/dashboard/inbox', icon: <Inbox size={20} />, roles: ['admin', 'coach'] },
+    { label: 'Roster & Teams', path: '/dashboard/roster', icon: <Users size={20} />, roles: ['admin', 'coach'] },
+    
+    // STUDENTS / GUESTS ONLY
+    { label: 'Join Team', path: '/dashboard/application', icon: <FileText size={20} />, roles: ['student', 'guest'] },
+
+    // EVERYONE
     { label: 'Comms', path: '/dashboard/comms', icon: <MessageSquare size={20} />, roles: ['all'] },
     { label: 'Calendar', path: '/dashboard/calendar', icon: <Calendar size={20} />, roles: ['all'] },
     { label: 'My Stats', path: '/dashboard/stats', icon: <Trophy size={20} />, roles: ['all'] },
-    { label: 'Roster & Teams', path: '/dashboard/roster', icon: <Users size={20} />, roles: ['admin', 'coach'] },
   ];
 
   // Filter items based on role
@@ -29,7 +39,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
   return (
     <>
-      {/* MOBILE OVERLAY (Click to close) */}
+      {/* MOBILE OVERLAY */}
       {isOpen && (
         <div 
           className="fixed inset-0 bg-black/50 z-40 md:hidden"
@@ -51,7 +61,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           <h1 className="font-titles text-2xl text-brand-red tracking-wider">
             MJHS<span className="text-white">PORTAL</span>
           </h1>
-          {/* Close Button (Mobile Only) */}
           <button onClick={toggleSidebar} className="md:hidden text-brand-grey hover:text-white">
             <X size={24} />
           </button>
@@ -65,7 +74,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
               <Link 
                 key={item.path} 
                 to={item.path}
-                onClick={() => window.innerWidth < 768 && toggleSidebar()} // Close on click (mobile)
+                onClick={() => window.innerWidth < 768 && toggleSidebar()} 
                 className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 group ${
                   isActive 
                     ? 'bg-brand-red text-white shadow-[0_0_10px_rgba(176,12,26,0.4)]' 
