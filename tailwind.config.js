@@ -21,6 +21,16 @@ export default {
         titles: ['Graduate', 'serif'],
         stats: ['Anton', 'sans-serif'],
         body: ['Poppins', 'sans-serif']
+      },
+      // --- NEW ANIMATION SETTINGS ---
+      animation: {
+        marquee: 'marquee 25s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        }
       }
     },
   },
