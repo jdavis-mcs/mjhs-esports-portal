@@ -1,6 +1,6 @@
 import Navbar from '../../components/layout/Navbar';
 import { Link } from 'react-router-dom';
-import { Youtube, Twitch, Instagram, Twitter } from 'lucide-react';
+import { Youtube, Twitch, Instagram, Twitter, Play, Calendar, Users, ShoppingBag } from 'lucide-react';
 
 const Home = () => {
   
@@ -13,45 +13,56 @@ const Home = () => {
       <Navbar />
 
       {/* --- HERO SECTION --- */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
         {/* Abstract Background Elements */}
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-brand-black via-transparent to-brand-black z-10"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-red/20 blur-[120px] rounded-full"></div>
         
         {/* Content */}
-        <div className="relative z-20 text-center max-w-4xl px-4">
+        <div className="relative z-20 text-center max-w-5xl px-4">
           <h2 className="text-brand-yellow font-titles tracking-[0.2em] text-lg mb-4 animate-pulse">
             MADISON JUNIOR HIGH SCHOOL
           </h2>
-          <h1 className="font-titles text-6xl md:text-9xl text-white mb-2 leading-tight">
+          <h1 className="font-titles text-6xl md:text-8xl text-white mb-2 leading-tight">
             #LEVEL<span className="text-brand-red">UP</span>
           </h1>
           <p className="font-body text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
             The official home of the Esports Cubs. Competing in Rocket League, Super Smash Bros, Minecraft, and more.
           </p>
           
-          <div className="flex flex-col md:flex-row gap-4 justify-center">
-            {/* WATCH LIVE -> Matches/Schedule */}
-			<Link to="/matches" className="bg-brand-red text-white px-8 py-4 rounded font-titles text-xl hover:bg-brand-darkRed transition shadow-[0_0_20px_rgba(176,12,26,0.4)] hover:shadow-[0_0_30px_rgba(176,12,26,0.6)]">
-			  MATCHES
-		    </Link>
+          {/* Action Buttons Grid */}
+          <div className="flex flex-wrap gap-4 justify-center items-center">
             
-            {/* MEET THE TEAM -> Public Roster */}
-			  <Link to="/public-roster" className="border border-brand-grey text-white px-8 py-4 rounded font-titles text-xl hover:bg-brand-white hover:text-brand-black transition">
-				MEET THE TEAM
-			  </Link>
+            {/* 1. WATCH LIVE (Scrolls down) */}
+            <button 
+              onClick={scrollToStream} 
+              className="flex items-center gap-2 bg-brand-red text-white px-6 py-4 rounded font-titles text-lg hover:bg-brand-darkRed transition shadow-[0_0_20px_rgba(176,12,26,0.4)] hover:shadow-[0_0_30px_rgba(176,12,26,0.6)]"
+            >
+              <Play size={20} fill="currentColor" /> WATCH LIVE
+            </button>
             
-			{/* MERCH STORE Button (Added) */}
-			  <Link to="/shop" className="bg-brand-yellow text-brand-black font-titles text-xl px-8 py-4 skew-x-[-10deg] hover:scale-105 transition-all duration-300 border-2 border-brand-yellow shadow-[0_0_20px_rgba(255,245,0,0.3)]">
-				<span className="skew-x-[10deg] block">MERCH STORE</span>
-			  </Link>
-			
-			
-            <Link to="/login">
-              <button className="bg-brand-white text-brand-black font-titles text-xl px-8 py-4 skew-x-[-10deg] hover:scale-105 transition-all duration-300 border-2 border-white shadow-[0_0_20px_rgba(255,255,255,0.2)]">
-                <span className="skew-x-[10deg] block">JOIN THE TEAM</span>
-              </button>
+            {/* 2. MATCHES (Public Calendar) */}
+            <Link to="/matches" className="flex items-center gap-2 border border-brand-grey text-white px-6 py-4 rounded font-titles text-lg hover:bg-brand-white hover:text-brand-black transition">
+              <Calendar size={20} /> MATCHES
             </Link>
+
+            {/* 3. MEET THE TEAM (Public Roster) */}
+            <Link to="/public-roster" className="flex items-center gap-2 border border-brand-grey text-white px-6 py-4 rounded font-titles text-lg hover:bg-brand-white hover:text-brand-black transition">
+              <Users size={20} /> ROSTER
+            </Link>
+
+            {/* 4. MERCH STORE */}
+            <Link to="/shop" className="flex items-center gap-2 bg-brand-yellow text-brand-black font-titles text-lg px-6 py-4 skew-x-[-10deg] hover:scale-105 transition-all duration-300 border-2 border-brand-yellow shadow-[0_0_20px_rgba(255,245,0,0.3)]">
+              <div className="skew-x-[10deg] flex items-center gap-2">
+                <ShoppingBag size={20} /> STORE
+              </div>
+            </Link>
+
+             {/* 5. JOIN (Login) */}
+             <Link to="/login" className="flex items-center gap-2 text-brand-grey hover:text-white px-6 py-4 font-titles text-lg transition">
+              LOGIN / JOIN
+            </Link>
+
           </div>
         </div>
       </section>
@@ -64,7 +75,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* --- LIVE STREAM SECTION (Requested in Doc) --- */}
+      {/* --- LIVE STREAM SECTION --- */}
       <section id="stream-section" className="py-20 px-6 bg-[#0a0a0a]">
         <div className="max-w-6xl mx-auto">
            <div className="flex items-end gap-4 mb-8">
@@ -76,7 +87,7 @@ const Home = () => {
 
            {/* Video Container - 16:9 Aspect Ratio */}
            <div className="relative w-full pt-[56.25%] bg-black rounded-xl border border-brand-grey/20 overflow-hidden shadow-2xl">
-              {/* Replace 'VIDEO_ID' with your actual YouTube Live ID */}
+              {/* REPLACE 'YOUR_CHANNEL_ID' with your real Channel ID or Video ID */}
               <iframe 
                 className="absolute top-0 left-0 w-full h-full"
                 src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID" 
@@ -85,11 +96,7 @@ const Home = () => {
                 allowFullScreen>
               </iframe>
               
-              {/* Offline Placeholder (Overlay this if stream is offline via logic later) */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-brand-black/80 pointer-events-none">
-                 <p className="font-titles text-2xl text-brand-grey">STREAM IS CURRENTLY OFFLINE</p>
-                 <p className="text-brand-grey/50 text-sm">Check the calendar for the next match</p>
-              </div>
+              {/* Optional: Offline Overlay logic can go here later */}
            </div>
         </div>
       </section>
@@ -97,7 +104,7 @@ const Home = () => {
       {/* --- FOOTER --- */}
       <footer className="bg-brand-black border-t border-brand-grey/10 py-12 mt-auto">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div>
+          <div className="text-center md:text-left">
             <h3 className="font-titles text-2xl text-brand-white">MJHS ESPORTS</h3>
             <p className="text-brand-grey text-sm">© {new Date().getFullYear()} Madison Consolidated Schools</p>
           </div>
