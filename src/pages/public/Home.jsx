@@ -107,6 +107,7 @@ const Home = () => {
           <div className="text-center md:text-left">
             <h3 className="font-titles text-2xl text-brand-white">MJHS ESPORTS</h3>
             <p className="text-brand-grey text-sm">© {new Date().getFullYear()} Madison Consolidated Schools</p>
+			<a href="privacy.html">Privacy & Terms</a>
           </div>
           
           <div className="flex gap-6 text-brand-grey">

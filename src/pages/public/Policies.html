@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy & Terms of Service | Esports Portal</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --accent-color: #00bcd4; /* Cyan - good for Esports vibe */
+            --section-bg: #1e1e1e;
+            --border-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--section-bg);
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1 {
+            margin: 0;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 0.5rem;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        section {
+            background-color: var(--section-bg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+            color: #fff;
+        }
+
+        h3 {
+            color: var(--accent-color);
+            margin-top: 1.5rem;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .alert-box {
+            background-color: rgba(0, 188, 212, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.8rem;
+            color: #666;
+            border-top: 1px solid var(--border-color);
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Legal & Compliance</h1>
+    <div class="subtitle">Effective Date: <span id="current-date">[Insert Date]</span></div>
+</header>
+
+<main>
+
+    <section id="privacy-policy">
+        <h2>Privacy Policy</h2>
+        <p>This Privacy Policy outlines how the Esports Portal collects, uses, and protects student information. We are committed to protecting student privacy and complying with the <strong>Family Educational Rights and Privacy Act (FERPA)</strong>.</p>
+
+        <h3>1. FERPA Compliance & "School Official" Designation</h3>
+        <p>This service operates under the direct control of the school/district with respect to the use and maintenance of education records. We function as a "School Official" with a legitimate educational interest in the data collected. We do not sell, share, or rent student data to third parties.</p>
+
+        <h3>2. Information We Collect</h3>
+        <p>In accordance with FERPA, we strictly limit data collection to "Directory Information" required for the operation of tournaments and team management:</p>
+        <ul>
+            <li>Student Name (First and Last)</li>
+            <li>School Email Address (for authentication)</li>
+            <li>Grade Level (for bracket sorting)</li>
+            <li>In-Game Usernames (Gamertags)</li>
+        </ul>
+        <div class="alert-box">
+            <strong>Note:</strong> We do NOT collect home addresses, social security numbers, biometric data, or financial information.
+        </div>
+
+        <h3>3. No Third-Party Tracking</h3>
+        <p>To ensure student safety, this portal does not utilize third-party advertising cookies, tracking pixels, or marketing scripts. Student browsing behavior is not tracked for commercial purposes.</p>
+
+        <h3>4. Data Security</h3>
+        <p>All data transmitted to and from this portal is encrypted using Transport Layer Security (HTTPS). Data is stored securely and access is restricted to authorized faculty and student administrators.</p>
+    </section>
+
+    <section id="terms-of-service">
+        <h2>Terms of Service</h2>
+        <p>By accessing this Esports Portal, you agree to comply with these Terms and your school's existing Acceptable Use Policy (AUP).</p>
+
+        <h3>1. Code of Conduct (CIPA Compliance)</h3>
+        <p>To comply with the <strong>Children's Internet Protection Act (CIPA)</strong>, the following behavior is strictly prohibited:</p>
+        <ul>
+            <li>Using obscene, profane, or sexually explicit language.</li>
+            <li>Harassment, cyberbullying, or hate speech.</li>
+            <li>Sharing links to harmful or blocked external content.</li>
+        </ul>
+        <p>Violation of these rules will result in immediate account suspension and reporting to school administration.</p>
+
+        <h3>2. Chat & Moderation</h3>
+        <p>This portal allows for text-based communication for the purpose of team coordination. <strong>All communication is logged and subject to review</strong> by faculty sponsors to ensure safety and compliance.</p>
+
+        <h3>3. Eligibility</h3>
+        <p>Access to this portal is a privilege, not a right. It is restricted to currently enrolled students. Accounts may be revoked at any time by school administration.</p>
+    </section>
+
+</main>
+
+<footer>
+    <p>Questions regarding these policies should be directed to the Faculty Esports Sponsor.</p>
+    <p>&copy; <script>document.write(new Date().getFullYear())</script> Esports Portal. All Rights Reserved.</p>
+</footer>
+
+<script>
+    // Simple script to automatically set the effective date to today if not manually set
+    // You can remove this script and hardcode the date in the HTML above if preferred.
+    const dateSpan = document.getElementById('current-date');
+    if (dateSpan.innerText === '[Insert Date]') {
+        const today = new Date();
+        dateSpan.innerText = today.toLocaleDateString();
+    }
+</script>
+
+</body>
+</html>
